@@ -3,7 +3,7 @@ pipeline {
  
    tools
     {
-       maven "nodejs-19"
+       NodeJS "nodejs-19"
     }
  stages {
       stage('checkout') {

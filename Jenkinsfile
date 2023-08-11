@@ -24,7 +24,7 @@
 pipeline {
     agent {
         docker {
-            image 'node:19-slim
+            image 'node:19-slim'
         }
     }
      environment {

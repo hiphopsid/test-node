@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pnl-tool
+  namespace: dev-ui
+  labels:
+    app: pnl-tool
+spec:
+  replicas: 1
+  revisionHistoryLimit: 0
+  selector:
+    matchLabels:
+      app: pnl-tool
+  template:
+    metadata:
+      labels:
+        app: pnl-tool
+    spec:
+      containers:
+        - name: pnl-tool
+          image: registry-np.geminisolutions.com/pnltoolui/pnltooluibeta
+          ports:
+            - name: pnltoolui
+              containerPort: 3000
+          imagePullPolicy: Always
+      imagePullSecrets:
+        - name: regcred
